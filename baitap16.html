@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let w=Number(prompt("Nhập vào chiều cao:"));
+        let h=Number(prompt("Nhập vào cân nặg:"));
+        const BMI=w/h;
+
+        if(BMI<18.5){
+            console.log("Nhẹ cân");
+        }else if(18.5<=BMI<23){
+            console.log("Bình thường");
+        }else if(23<=BMI<25){
+            console.log("Thừa cân");
+        }else{
+            console.log("Béo phì");
+        }
+    </script>
+</body>
+</html>

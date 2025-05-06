@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8s">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let m=prompt("Nhập vào số m:");
+        let n=prompt("Nhập vào số n:");
+    function ucln(m, n) {
+    while (n !== 0) {
+        let temp = n;
+        n = m % n;
+        m = temp;
+    }
+    return m;
+    }
+
+    function bcnn(m, n) {
+         return Math.abs(m * n) / ucln(m, n);
+    }
+
+console.log(`BCNN của 2 số là: ` + bcnn(m, n));
+
+console.log(`UCLN của 2 số là: ` + ucln(m, n));
+
+    </script>
+</body>
+</html>
