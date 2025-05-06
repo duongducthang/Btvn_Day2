@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trò chơi đoán số</title>
+</head>
+<body>
+    <h1>Trò chơi đoán số (1 → 20)</h1>
+    <input type="number" id="answer" placeholder="Nhập số của bạn" min="1" max="20">
+    <button onclick="checkAnswer()">Đoán</button>
+    <p id="message"></p>
+
+    <script>
+        const correct = Math.floor(Math.random() * 20) + 1;
+        let attempts = 0;
+
+        function checkAnswer() {
+            const userAnswer = parseInt(document.getElementById("answer").value);
+            const message = document.getElementById("message");
+
+            if (isNaN(userAnswer) || userAnswer < 1 || userAnswer > 20) {
+                message.textContent = "Vui lòng nhập số từ 1 đến 20.";
+                return;
+            }
+
+            attempts++;
+
+            if (userAnswer === correct) {
+                message.textContent = "🎉 Đoán đúng!";
+            } else if (attempts >= 5) {
+                message.textContent = `😢 Bạn đã thua cuộc. Số đúng là ${correct}.`;
+                document.querySelector("button").disabled = true;
+            } else {
+                message.textContent = `❌ Đoán sai. Bạn còn ${5 - attempts} lần.`;
+            }
+        }
+    </script>
+</body>
+</html>
