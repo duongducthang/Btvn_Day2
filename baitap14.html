@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hình chữ nhật</title>
+</head>
+<body>
+    <h2>Hình chữ nhật </h2>
+    <pre id="result" style="font-size: 18px; line-height: 1.5;"></pre>
+
+    <script>
+        const m = 4; // chiều rộng
+        const n = 3; // chiều cao
+
+        let result = "";
+
+        for (let i = 0; i < n; i++) {
+            result += " * ".repeat(m) + "\n";
+        }
+
+        document.getElementById("result").textContent = result;
+    </script>
+</body>
+</html>
+

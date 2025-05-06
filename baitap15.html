@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>In tam giác vuông cân</title>
+</head>
+<body>
+    <h2>Hình tam giác vuông cân </h2>
+    <pre id="result" style="font-size: 18px; line-height: 1.5;"></pre>
+
+    <script>
+        const n = 3; // bạn có thể thay đổi giá trị n tại đây (n >= 3)
+        let result = "";
+
+        if (n >= 3) {
+            for (let i = 1; i <= n; i++) {
+                result += "*".repeat(i) + "\n";
+            }
+        } else {
+            result = "n phải ≥ 3.";
+        }
+
+        document.getElementById("result").textContent = result;
+    </script>
+</body>
+</html>

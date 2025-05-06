@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm số 0 vào chuỗi</title>
+</head>
+<body>
+    <h2>Thêm số 0 vào đầu chuỗi cho đủ độ dài</h2>
+    
+    <label>Nhập chuỗi s (chỉ gồm chữ số):</label>
+    <input type="text" id="s"><br><br>
+
+    <label>Nhập độ dài l (>= độ dài s):</label>
+    <input type="number" id="l"><br><br>
+
+    <button onclick="padZeros()">Thực hiện</button>
+
+    <p>Kết quả: <span id="result"></span></p>
+
+    <script>
+        function padZeros() {
+            let s = document.getElementById("s").value.trim();
+            let l = parseInt(document.getElementById("l").value);
+            let resultField = document.getElementById("result");
+
+            if (!/^\d+$/.test(s)) {
+                resultField.textContent = "Chuỗi s phải chỉ chứa chữ số!";
+                return;
+            }
+
+            if (isNaN(l) || l < s.length) {
+                resultField.textContent = "Độ dài l phải ≥ độ dài của chuỗi s.";
+                return;
+            }
+
+            let padded = s.padStart(l, '0');
+            resultField.textContent = padded;
+        }
+    </script>
+</body>
+</html>
