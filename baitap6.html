@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính tổng S</title>
+</head>
+<body>
+    <h2>Tính tổng S</h2>
+
+    <label>Nhập số n (n ≥ 2):</label>
+    <input type="number" id="n" min="2"><br><br>
+
+    <button onclick="calculateSum()">Tính tổng</button>
+
+    <p>Kết quả: <span id="result"></span></p>
+
+    <script>
+        function calculateSum() {
+            const n = parseInt(document.getElementById("n").value);
+            const resultField = document.getElementById("result");
+
+            if (isNaN(n) || n < 2) {
+                resultField.textContent = "Vui lòng nhập số nguyên n ≥ 2.";
+                return;
+            }
+
+            let S = 0;
+            for (let i = 1; i <= n; i++) {
+                S += 1 / (i * (i + 1));
+            }
+
+            resultField.textContent = S.toFixed(6); // làm tròn 6 chữ số thập phân
+        }
+    </script>
+</body>
+</html>
